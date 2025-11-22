@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c27c00">
+<meta charset="UTF-8">
+<title>PDF Expected & Compare – Blue Highlight Version</title>
+
+<!-- Link CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- PDF.js -->
+<script src="pdf.js"></script>
+
+</head>
+<body>
+
+<h3>📄 Upload Previous PDF</h3>
+<input type="file" id="pdfBase" accept=".pdf">
+
+<!-- ORIGINAL NUMBERS -->
+<div id="originalSection" style="display:none;">
+  <div id="originalHeader">
+    <label>RLBOriginal Numbers</label>
+    <button id="toggleOriginal">🔽</button>
+  </div>
+  <div id="originalContent"></div>
+</div>
+
+<!-- EXPECTED BOX -->
+<div class="box" id="expectedSection" style="opacity:0;pointer-events:none;">
+  <label>EXPECTED</label>
+  <div id="expectedBox"></div>
+</div>
+
+<!-- COMPARE -->
+<button id="compareBtn" style="display:none;">Compare</button>
+<div class="box" id="compareSection" style="display:none;">
+  <label>MATCHED RESULTS</label>
+  <input type="file" id="pdfNext" accept=".pdf">
+  <div id="matchCount" class="countBox"></div>
+  <div id="compareOutput"></div>
+</div>
+
+<!-- JS -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker Registered'))
+    .catch(err => console.log('Service Worker registration failed:', err));
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

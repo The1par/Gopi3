@@ -1,0 +1,22 @@
+{
+  "name": "PDF Compare App",
+  "short_name": "PDFCompare",
+  "description": "Compare and highlight numbers from PDFs easily",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#c27c00",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

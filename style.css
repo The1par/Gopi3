@@ -1,0 +1,67 @@
+html,body{
+  height:100%;margin:0;padding:0;font-family:monospace;text-align:center;color:#000;
+  background:url('images/icon.png') no-repeat center center fixed;background-size:cover;
+  overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+}
+h3{margin:10px 0;font-size:18px;color:#fff8e1;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
+.box{
+  display:inline-block;border:1px solid rgba(255,255,255,0.3);padding:10px;margin:8px;width:92%;max-width:1000px;
+  border-radius:10px;background:rgba(255,255,255,0.85);box-shadow:0 4px 10px rgba(0,0,0,0.3);backdrop-filter:blur(3px);transition:transform 0.2s ease;
+}
+.box:hover{transform:translateY(-2px);}
+#originalSection{
+  background:rgba(255,250,240,0.85);border:1px solid #d2c2a6;color:#4b3a1a;padding:10px;border-radius:8px;width:90%;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.15);text-align:left;
+}
+#originalHeader{display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+#originalHeader label{font-weight:bold;font-size:15px;color:#5b4b1a;}
+#toggleOriginal{
+  border:none;border-radius:50%;background:linear-gradient(90deg,#c27c00,#a85d00);color:#fff;width:26px;height:26px;
+  font-size:15px;cursor:pointer;box-shadow:0 2px 5px rgba(0,0,0,0.3);transition:transform 0.2s ease;
+}
+#toggleOriginal:hover{transform:scale(1.1);}
+#originalContent{margin-top:8px;transition:max-height 0.4s ease,opacity 0.4s ease;overflow:hidden;opacity:1;}
+#originalContent.collapsed{max-height:0;opacity:0;}
+.specialNum{color:#c27c00;font-weight:bold;font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,0.3);}
+.sectionLabel{font-weight:bold;color:#5c4b2e;margin-top:6px;}
+.fiveDigit{color:#3b2a00;font-size:15px;}
+.fourDigit{color:#666;font-size:14px;}
+.blueFill{background:#cce7ff;padding:2px 4px;border-radius:4px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.2);}
+#expectedBox{
+  border:1px solid #d2c2a6;padding:10px;border-radius:5px;color:#4b3a1a;background:rgba(255,250,240,0.8);
+  line-height:1.6;white-space:pre-wrap;display:inline-block;font-size:16px;height:260px;overflow:hidden;
+}
+input[type=file],button{
+  margin:10px 0 10px 30px;padding:10px 24px;font-size:14px;font-family:monospace;color:#fff;
+  background:linear-gradient(90deg,#c27c00,#a85d00);border:none;border-radius:20px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.3);cursor:pointer;transition:all 0.3s ease;
+}
+input[type=file]:hover,button:hover{background:linear-gradient(90deg,#e49d00,#b96f00);transform:translateY(-2px);}
+#compareOutput{
+  background:rgba(255,255,255,0.9);padding:6px;border:1px solid #ccc;border-radius:5px;
+  height:320px;overflow-y:auto;box-shadow:inset 0 1px 3px rgba(0,0,0,0.2);
+}
+.countBox{font-weight:bold;color:#3b2a00;margin-bottom:4px;font-size:13px;}
+.matched-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:8px;}
+.matched-grid.faded{opacity:0.5;transform:translateY(6px);}
+.match-cell{
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:80px;
+  padding:5px 8px;border-radius:8px;font-weight:bold;font-size:15px;text-align:center;box-shadow:0 3px 6px rgba(0,0,0,0.25);
+}
+.match-cell.green{background:#d5ffd5;border:1px solid #00a000;color:#006000;animation:glowPulse 2s infinite alternate;}
+.match-cell.yellow{background:#fffbc1;border:1px solid #c7a600;color:#8a6a00;}
+.match-cell.gray{background:#f2f2f2;border:1px solid #ccc;color:#333;}
+.number-pair{display:flex;gap:5px;justify-content:center;align-items:center;}
+.expected-box{background:#ffffff;border-radius:5px;padding:2px 6px;font-weight:900;font-size:16px;color:#000;}
+.matched-box{
+  background:linear-gradient(to bottom right,#ffcc00,#ff3300);border-radius:5px;padding:2px 6px;
+  font-weight:900;font-size:16px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.3);
+}
+.diff{font-size:11px;margin-top:2px;color:#444;}
+.extra{font-size:11px;color:#0060aa;font-style:italic;}
+.win{font-size:12px;color:#008000;font-weight:bold;}
+.dateBox{
+  display:inline-block;margin-bottom:6px;padding:4px 10px;border:1px solid #0099ff;border-radius:6px;
+  background:linear-gradient(#f0faff,#d5eaff);color:#004c80;font-size:12px;font-weight:bold;box-shadow:0 3px 6px rgba(0,0,0,0.15);
+}
+@keyframes glowPulse{0%{box-shadow:0 0 2px #00ff00;}50%{box-shadow:0 0 6px #00ff00;}100%{box-shadow:0 0 2px #00ff00;}}
